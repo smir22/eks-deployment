@@ -1,5 +1,5 @@
 locals {
-  region = "eu-west-2"
+  region      = "eu-west-2"
   bucket_name = "smir-eks"
   tags = {
     Project   = "eks-deployment"
@@ -18,9 +18,9 @@ resource "aws_s3_bucket" "s3_bucket" {
     prevent_destroy = true
   }
 
-  tags = {
+  tags = merge(local.tags, {
     Name = local.bucket_name
-  }
+  })
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "encryption_block" {
