@@ -9,7 +9,7 @@ terraform {
   }
   backend "s3" {
     bucket       = "smir-eks"
-    key          = "eks-deployment/s3-boostrap/terraform.tfstate"
+    key          = "eks-deployment/s3-bootstrap/terraform.tfstate"
     region       = "eu-west-2"
     encrypt      = true
     use_lockfile = true
