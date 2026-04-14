@@ -7,13 +7,13 @@ terraform {
       version = "~> 6.0"
     }
   }
-  # backend "s3" {
-  #   bucket       = "smvf-s3-bucket-test"
-  #   key          = "eks-proj/s3-boostrap/terraform.tfstate"
-  #   region       = local.region
-  #   encrypt      = true
-  #   use_lockfile = true
-  # }
+  backend "s3" {
+    bucket       = "smir-eks"
+    key          = "eks-deployment/s3-boostrap/terraform.tfstate"
+    region       = "eu-west-2"
+    encrypt      = true
+    use_lockfile = true
+  }
 }
 
 # Configure the AWS Provider
